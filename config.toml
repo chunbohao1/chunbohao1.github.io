@@ -1,0 +1,46 @@
+baseURL = "https://chunbohao1.github.io/"
+languageCode = "en-us"
+title = "Chunbo Hao (郝春博)"
+timeZone = "Asia/Shanghai"
+disableKinds = ["taxonomy", "term"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [["\\[", "\\]"], ["$$", "$$"]]
+          inline = [["\\(", "\\)"], ["$", "$"]]
+
+[params]
+  author = "Chunbo Hao"
+  description = "M.S. Student @ Audio, Speech and Language Processing Group (ASLP@NPU), School of Computer Science, Northwestern Polytechnical University"
+  avatar = "images/avatar.png"
+  location = "Xi'an, Shaanxi, China"
+  email = "cbhao@mail.nwpu.edu.cn"
+  googleScholar = "https://scholar.google.co.uk/citations?user=7KQWKfwAAAAJ"
+  dblp = "https://dblp.uni-trier.de/pid/343/5438.html"
+  orcid = "https://orcid.org/0009-0005-5957-8936"
+  repository = "chunbohao1/chunbohao1.github.io"
+  googleScholarStatsUseCDN = true
+
+[menu]
+  [[menu.main]]
+    name = "About Me"
+    url = "#about-me"
+    weight = 1
+  [[menu.main]]
+    name = "Education"
+    url = "#education"
+    weight = 2
+  [[menu.main]]
+    name = "Publications"
+    url = "#publications"
+    weight = 3
+  [[menu.main]]
+    name = "Projects"
+    url = "#open-source-projects"
+    weight = 4

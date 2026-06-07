@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  {{- with .Site.Params.description -}}
+  <meta name="description" content="{{ . }}">
+  {{- end -}}
+  <title>{{ .Site.Title }}</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/avatar.png">
+  <meta name="theme-color" content="#1e3a5f">
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/academicons.css">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- MathJax -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        processEscapes: true
+      }
+    };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/tex-mml-chtml.js" async></script>
+
+  <base target="_blank">
+  <script>
+    // Fix anchor navigation: override base target for same-page links
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a');
+      if (link && link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        var target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  </script>
+</head>
+<body>
+  {{ partial "masthead.html" . }}
+  <div id="main" role="main">
+    {{ partial "sidebar.html" . }}
+    <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+      <div class="page__inner-wrap">
+        <section class="page__content" itemprop="text">
+          {{ .Content }}
+        </section>
+      </div>
+    </article>
+  </div>
+
+  {{ partial "google_scholar_stats.html" . }}
+</body>
+</html>

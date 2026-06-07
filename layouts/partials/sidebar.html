@@ -1,0 +1,44 @@
+<div class="sidebar sticky">
+  <div itemscope itemtype="http://schema.org/Person" class="profile_box">
+    <div class="author__avatar">
+      <img src="{{ .Site.Params.avatar }}" class="author__avatar" alt="{{ .Site.Title }}">
+    </div>
+    <div class="author__content">
+      <h3 class="author__name">{{ .Site.Title }}</h3>
+      <p class="author__bio">{{ .Site.Params.description }}</p>
+    </div>
+    <div class="author__urls-wrapper">
+      <ul class="author__urls social-icons">
+        {{ with .Site.Params.location }}
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ . }}</li>
+        {{ end }}
+        {{ with .Site.Params.email }}
+        <li><a href="mailto:{{ . }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a></li>
+        {{ end }}
+        {{ with .Site.Params.googleScholar }}
+        <li><a href="{{ . }}"><i class="fas fa-fw fa-graduation-cap"></i> Google Scholar</a></li>
+        {{ end }}
+        {{ with .Site.Params.dblp }}
+        <li><a href="{{ . }}"><i class="ai ai-dblp ai-fw" aria-hidden="true"></i> DBLP</a></li>
+        {{ end }}
+        {{ with .Site.Params.orcid }}
+        <li><a href="{{ . }}"><i class="ai ai-orcid-square ai-fw"></i> ORCID</a></li>
+        {{ end }}
+      </ul>
+      <div class="author__urls_sm">
+        {{ with .Site.Params.email }}
+        <a href="mailto:{{ . }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i></a>
+        {{ end }}
+        {{ with .Site.Params.googleScholar }}
+        <a href="{{ . }}"><i class="fas fa-fw fa-graduation-cap"></i></a>
+        {{ end }}
+        {{ with .Site.Params.dblp }}
+        <a href="{{ . }}"><i class="ai ai-dblp ai-fw" aria-hidden="true"></i></a>
+        {{ end }}
+        {{ with .Site.Params.orcid }}
+        <a href="{{ . }}"><i class="ai ai-orcid-square ai-fw"></i></a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
